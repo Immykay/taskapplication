@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>{{ data.task ? "Edit Task" : "Create Task" }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Task Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter task name" />
+      <mat-error *ngIf="taskForm.get('name')?.hasError('required')">
+        Task name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Assign to User</mat-label>
+      <mat-select formControlName="assignedTo">
+        <mat-option *ngFor="let user of users" [value]="user.id">{{
+          user.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="Pending">Pending</mat-option>
+        <mat-option value="In Progress">In Progress</mat-option>
+        <mat-option value="Completed">Completed</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [disabled]="taskForm.invalid" (click)="onSubmit()">
+    {{ data.task ? "Save" : "Create" }}
+  </button>
+</div>

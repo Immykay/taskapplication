@@ -1,0 +1,38 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Task 9",
+      "assignedTo": 1,
+      "status": "Pending"
+    },
+    {
+      "id": 2,
+      "name": "Task 2",
+      "assignedTo": 2,
+      "status": "In Progress"
+    },
+    {
+      "name": "thjahj",
+      "assignedTo": 2,
+      "status": "In Progress",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "username": "johndoe",
+      "password": "password123",
+      "token": "fake-jwt-token-johndoe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "username": "janesmith",
+      "password": "password456",
+      "token": "fake-jwt-token-janesmith"
+    }
+  ]
+}
